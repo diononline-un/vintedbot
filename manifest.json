@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "Vinted Auto",
+  "version": "1.0.0",
+  "description": "24/7 offer & message automation for Vinted — local, no cloud",
+  "icons": {
+    "16": "icons/logo-16.png",
+    "48": "icons/logo-48.png",
+    "128": "icons/logo-128.png"
+  },
+
+  "background": {
+    "service_worker": "src/background/service-worker.ts",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.vinted.at/*",
+        "https://www.vinted.be/*",
+        "https://www.vinted.co.uk/*",
+        "https://www.vinted.com/*",
+        "https://www.vinted.cz/*",
+        "https://www.vinted.de/*",
+        "https://www.vinted.dk/*",
+        "https://www.vinted.es/*",
+        "https://www.vinted.fi/*",
+        "https://www.vinted.fr/*",
+        "https://www.vinted.gr/*",
+        "https://www.vinted.hr/*",
+        "https://www.vinted.hu/*",
+        "https://www.vinted.ie/*",
+        "https://www.vinted.it/*",
+        "https://www.vinted.lt/*",
+        "https://www.vinted.lu/*",
+        "https://www.vinted.nl/*",
+        "https://www.vinted.pl/*",
+        "https://www.vinted.pt/*",
+        "https://www.vinted.ro/*",
+        "https://www.vinted.se/*",
+        "https://www.vinted.sk/*"
+      ],
+      "js": ["src/content/index.tsx"],
+      "css": [],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "side_panel": {
+    "default_path": "panel/index.html"
+  },
+
+  "permissions": [
+    "storage",
+    "cookies",
+    "tabs",
+    "sidePanel",
+    "alarms"
+  ],
+
+  "host_permissions": [
+    "https://www.vinted.*/*"
+  ]
+}

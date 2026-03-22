@@ -1,0 +1,74 @@
+/* ─── Vinted Auto — Dark Glass Design System ─────────────────────────────── */
+
+:root {
+  /* Backgrounds */
+  --bg:              #08080f;
+  --surface:         rgba(255, 255, 255, 0.055);
+  --surface-hover:   rgba(255, 255, 255, 0.09);
+  --surface-active:  rgba(255, 255, 255, 0.13);
+
+  /* Borders */
+  --border:          rgba(255, 255, 255, 0.08);
+  --border-strong:   rgba(255, 255, 255, 0.14);
+
+  /* Blur */
+  --blur:            blur(24px) saturate(180%);
+
+  /* Accent colours */
+  --accent:          #22d3ee;   /* cyan  — running / active */
+  --accent-dim:      rgba(34, 211, 238, 0.15);
+  --success:         #4ade80;   /* green — accepted / ok */
+  --success-dim:     rgba(74, 222, 128, 0.13);
+  --purple:          #a78bfa;   /* purple — messages */
+  --purple-dim:      rgba(167, 139, 250, 0.13);
+  --warn:            #fbbf24;   /* amber — warning */
+  --danger:          #f87171;   /* red   — error */
+
+  /* Text */
+  --text:            #f1f5f9;
+  --text-secondary:  #94a3b8;
+  --text-muted:      #475569;
+
+  /* Radius */
+  --radius:          14px;
+  --radius-sm:       8px;
+  --radius-xs:       5px;
+
+  /* Spacing base */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  /* Typography */
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ─── Base reset for panel & shadow roots ────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Glass panel primitive ──────────────────────────────────────────────── */
+.glass {
+  background: var(--surface);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }
